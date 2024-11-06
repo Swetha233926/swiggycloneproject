@@ -1,0 +1,207 @@
+<app-navbar></app-navbar>
+<div class="mt-24 flex justify-center max-w-3xl mx-auto">
+    <div class="flex flex-col">
+        <p class="text-gray-600 text-xs">home / hyderabad / pizza</p>
+        <h2 class="font-bold text-xl mt-3">Pizza Hut</h2>
+        <div class="box-border border shadow-[0_5px_5px_0_rgba(0,0,0.5,0.5)] flex flex-col pt-4 pb-4 pl-4 pr-96 rounded-xl mt-8">
+            <p class="font-bold"><span></span>4.1 (3.7K+ ratings) • ₹300 for two</p>
+            <a href="" class="text-red-700">Pizzas</a>
+            <p>Outlet Bachupally <span></span></p>
+            <p>50-55min</p>
+        </div>
+
+        <section class="my-12 relative">
+            <h2 class="text-2xl font-bold mb-4">Deals for you</h2>
+            <div class="flex overflow-hidden space-x-4" id="category-container4">
+              <a  href="" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
+                <div class="flex-row flex box-border border rounded-3xl pt-2 pb-2 pl-3 pr-24">
+                    <img src="assets/restaurant/one.png" class="w-12 h-12" alt="">
+                    <div class="pl-3">
+                        <p class="font-bold">Extra ₹25 Off</p>
+                        <p>ENDS IN 10h: 54m: 39s</p>
+                    </div>
+                </div> 
+              </a>
+
+              <a  href="" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
+                <div class="flex-row flex box-border border rounded-3xl pt-2 pb-2 pl-3 pr-24">
+                    <img src="assets/restaurant/one.png" class="w-12 h-12" alt="">
+                    <div class="pl-3">
+                        <p class="font-bold">Extra ₹25 Off</p>
+                        <p>ENDS IN 10h: 54m: 39s</p>
+                    </div>
+                </div> 
+              </a>
+
+              <a  href="" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
+                <div class="flex-row flex box-border border rounded-3xl pt-2 pb-2 pl-3 pr-24">
+                    <img src="assets/restaurant/one.png" class="w-12 h-12" alt="">
+                    <div class="pl-3">
+                        <p class="font-bold">Extra ₹25 Off</p>
+                        <p>ENDS IN 10h: 54m: 39s</p>
+                    </div>
+                </div> 
+              </a>
+        
+            </div>
+            <app-scroll-navigation [containerId]="'category-container4'"></app-scroll-navigation>
+          </section>
+
+
+        <p class="mt-4 text-center text-gray-600 font-semibold">M E N U</p>
+
+        <div class="relative mb-6 mt-3">
+            <input 
+              type="text" 
+              placeholder="Search for dishes..." 
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-center font-semibold text-black"
+            />
+            <button class="absolute top-1 right-2 text-blue-500">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          
+          <section class="my-12 relative ">
+            <h2 class="text-2xl font-bold mb-4">Top picks</h2>
+            <div class="flex overflow-hidden space-x-4" id="category-container3">
+                <a href="" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
+                    <div class="relative w-72 h-72 rounded-2xl overflow-hidden">
+                      <img
+                        src="assets/restaurant/five.png"
+                        alt="Restaurant Image"
+                        class="w-full h-full object-cover"
+                      />
+                      <div class="absolute bottom-0 left-0 flex items-center p-2 bg-gradient-to-t from-black to-transparent w-full">
+                        <span class="text-white font-bold text-lg mr-2">₹239</span>
+                        <button class="ml-auto px-8 py-1 bg-white text-green-500 rounded-lg font-bold" >ADD</button>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  
+              
+            </div>
+            <app-scroll-navigation [containerId]="'category-container3'"></app-scroll-navigation>
+          </section>
+
+          <div class="container mx-auto p-4">
+            <!-- Dropdown Button for "Recommended" Section -->
+            <div class="flex justify-between items-center">
+              <h2 class="font-bold text-xl">Recommended</h2>
+              <!-- Button to toggle the dropdown -->
+              <button (click)="toggleDropdown()" class="text-blue-500 hover:text-blue-700 font-semibold">
+                {{ isDropdownVisible ? '▲' : '▼' }}
+              </button>
+            </div>
+          
+            <!-- Dropdown Content -->
+            <div *ngIf="isDropdownVisible" class="mt-4">
+              <!-- Food Item 1 -->
+              <div class="flex flex-row space-x-6">
+                <!-- Food details section (left side) -->
+                <div class="flex flex-col">
+                  <p class="font-bold text-lg">Veggie Supreme</p>
+                  <p class="text-xl font-semibold text-blue-600">₹399</p>
+                  <p class="text-sm text-yellow-500">3.4 (48 reviews)</p>
+                  <p class="text-sm text-gray-700">
+                    Serves 1 | A supreme combination of black olives, green capsicum, mushroom, onion, spicy red paprika & juicy sweet corn with flavourful pan sauce and 100% mozzarella cheese. 
+                    (PAN Per/Med-254 Kcal/100g | TnC-258 Kcal/100g | Stuffed Crust Add : Per: 227 Kcal/100g | Med: 216 Kcal/100g)
+                    Contains Cereals containing Gluten (Wheat), Soya and Milk & Milk Products.
+                  </p>
+                </div>
+          
+                <!-- Food image section (right side) -->
+                <div class="relative w-1/2 ml-4">
+                  <img src="assets/restaurant/pizzas/one.png" alt="Food Item 1" class="w-40 h-32 object-cover rounded-xl">
+                  <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white rounded-full">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>   
+        
+        <section class="container mx-auto p-4 ">
+          <h2 class="font-bold text-xl">Flavour Fun Range</h2>
+
+          <div class="container mt-4">
+            <!-- Dropdown Button for Flavour Fun Range Section -->
+            <div class="flex justify-between items-center">
+              <p class="font-bold text">Veg Pizza</p>
+              <!-- Button to toggle the dropdown -->
+              <button (click)="toggleFlavourFunDropdown()" class="text-blue-500 hover:text-blue-700 font-semibold">
+                {{ isFlavourFunDropdownVisible ? '▲' : '▼' }}
+              </button>
+            </div>
+          
+            <!-- Dropdown Content for Flavour Fun Range (Initially Hidden) -->
+            <div *ngIf="isFlavourFunDropdownVisible" class="mt-4">
+              <!-- Food Item 1 -->
+              <div class="flex flex-row space-x-6">
+                <!-- Food details section (left side) -->
+                <div class="flex flex-col">
+                  <p class="font-bold text-lg">Spicy BBQ Delight</p>
+                  <p class="text-xl font-semibold text-blue-600">₹449</p>
+                  <p class="text-sm text-yellow-500">4.0 (68 reviews)</p>
+                  <p class="text-sm text-gray-700">
+                    A spicy combination of BBQ sauce, jalapenos, red onions, and tender chicken, topped with mozzarella cheese.
+                  </p>
+                </div>
+          
+                <!-- Food image section (right side) -->
+                <div class="relative w-1/2 ml-4">
+                  <img src="assets/restaurant/pizzas/four.png" alt="Food Item 1" class="w-40 h-32 object-cover rounded-xl">
+                  <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white rounded-full">
+                    Add
+                  </button>
+                </div>
+              </div>
+          
+              <!-- Food Item 2 -->
+              <div class="flex flex-row space-x-6 mt-4">
+                <!-- Food details section (left side) -->
+                <div class="flex flex-col">
+                  <p class="font-bold text-lg">Veggie Fiesta</p>
+                  <p class="text-xl font-semibold text-blue-600">₹399</p>
+                  <p class="text-sm text-yellow-500">4.5 (105 reviews)</p>
+                  <p class="text-sm text-gray-700">
+                    A vibrant combination of bell peppers, olives, mushrooms, and sweet corn, topped with mozzarella cheese.
+                  </p>
+                </div>
+          
+                <!-- Food image section (right side) -->
+                <div class="relative w-1/2 ml-4">
+                  <img src="assets/restaurant/pizzas/five.png" alt="Food Item 2" class="w-40 h-32 object-cover rounded-xl">
+                  <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white rounded-full">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <div class="flex flex-col bg-gray-100 pb-32">
+            <div class="flex flex-row px-6 py-4">
+                <img src="assets/restaurant/six.png" class="w-14" alt="">
+                <p class="text-gray-400 text-xs pt-2 pl-2">License No. 13621034000274</p>
+            </div>
+            
+            <h1 class="text-xs font-bold text-gray-400 pl-6">Pizza Hut</h1>
+            <p class="text-gray-400 pl-6 text-xs">(Outlet:Bachupally)</p>
+            <p class="text-gray-400 pl-6 pt-2 text-xs">Pizza Hut, Ground Floor, Plot No. 1519, Block No. 102, S.no. 165,166,167,178 & 179, Lahari Estate, Bachupally Mandal, Hyderabad, Bachupally, Medchal-Malkajgiri, Telangana-500090</p>
+            <p class="font-bold text-center py-4 text-xs">For better experience, download the Swiggy app now</p>
+            <div class="flex flex-row justify-center space-x-6">
+                <a href=""><img src="assets/home/footer1.png" class="w-40 h-12" alt=""></a>
+                <a href=""><img src="assets/home/footer2.png" class="w-40 h-12"  alt=""></a>
+            </div>
+
+
+        </div>
+          
+
+    </div>
+
+</div>
+<a routerLink="cart" href="cart">Go to Cart</a>

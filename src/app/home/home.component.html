@@ -9,7 +9,7 @@
   <!-- "What's on Your Mind" Slider (Food Categories) -->
   <section class="my-12 relative">
     <h2 class="text-2xl font-bold mb-4">What's on Your Mind?</h2>
-    <div class="flex overflow-hidden space-x-4" id="category-container">
+    <div class="flex overflow-hidden space-x-4" id="category-container2">
       
     <div class="w-40 flex-shrink-0">
         <img src="assets/home/hamper.png" alt="Burgers" class="h-15">
@@ -69,140 +69,82 @@
       <!-- Add more food items as needed -->
   </div>
   
-    <!-- Navigation buttons -->
-    <div class="absolute top-0 right-0 flex space-x-2 mt-4">
-        <button id="prevBtn" class="bg-white border rounded-full p-2 shadow">
-            <i class="bi bi-chevron-left"></i>
-        </button>
-        <button id="nextBtn" class="bg-white border rounded-full p-2 shadow">
-            <i class="bi bi-chevron-right"></i>
-        </button>
-    </div>
+   
+    <app-scroll-navigation [containerId]="'category-container2'"></app-scroll-navigation>
   </section>
   
   <!-- Top Restaurants Section -->
   <section class="my-12 relative">
     <h2 class="text-2xl font-bold mb-4">Top restaurant chains in Chhindwara</h2>
     <div class="flex overflow-hidden space-x-4" id="category-container1">
-      <div class="p-4 flex-shrink-0">
+      <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
           src="assets/restaurants/satkar.png"
           alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
+          class="w-40 h-42 object-cover"
+          style="border-radius: 20px; width: 280px;"
         />
         <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
         <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
         <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
+      </a>
 
-      <div class="p-4 flex-shrink-0">
+      <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
           src="assets/restaurants/satkar.png"
           alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
+          class="w-40 h-42 object-cover"
+          style="border-radius: 20px; width: 280px;"
         />
         <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
         <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
         <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
+      </a>
 
-      <div class="p-4 flex-shrink-0">
+      <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
           src="assets/restaurants/satkar.png"
           alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
+          class="w-40 h-42 object-cover"
+          style="border-radius: 20px; width: 280px;"
         />
         <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
         <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
         <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
+      </a>
 
-      <div class="p-4 flex-shrink-0">
+      <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
           src="assets/restaurants/satkar.png"
           alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
+          class="w-40 h-42 object-cover"
+          style="border-radius: 20px; width: 280px;"
         />
         <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
         <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
         <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
+      </a>
 
-      <div class="p-4 flex-shrink-0">
+      <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
           src="assets/restaurants/satkar.png"
           alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
+          class="w-40 h-42 object-cover"
+          style="border-radius: 20px; width: 280px;"
         />
         <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
         <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
         <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
-
-      <div class="p-4 flex-shrink-0">
-        <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
-
-      <div class="p-4 flex-shrink-0">
-        <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
-
-      <div class="p-4 flex-shrink-0">
-        <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
-
-      <div class="p-4 flex-shrink-0">
-        <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover" style="border-radius: 20px;width: 280px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
-    <!-- Add more food items as needed -->
-  </div>
-  
-    <!-- Navigation buttons -->
-    <div class="absolute top-0 right-0 flex space-x-2 mt-4">
-      <button id="prevBtn" class="bg-white border rounded-full p-2 shadow">
-          <i class="bi bi-chevron-left"></i>
-      </button>
-      <button id="nextBtn" class="bg-white border rounded-full p-2 shadow">
-          <i class="bi bi-chevron-right"></i>
-      </button>
-  </div>  
+      </a>
+    
+      
+    </div>
+    <app-scroll-navigation [containerId]="'category-container1'"></app-scroll-navigation>
   </section>
 
   <!-- Filter and Sort Options -->

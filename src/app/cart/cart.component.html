@@ -1,0 +1,45 @@
+<!-- Navbar component with custom input property -->
+<app-navbar [inCartView]="true"></app-navbar>
+
+<!-- Cart container with padding -->
+<div class="cart-container p-4 min-h-screen flex flex-col justify-between">
+  
+    <!-- Cart Title -->
+    <h2 class="font-bold text-2xl mb-4">Your Cart</h2>
+
+    <!-- Empty Cart Message *ngIf="cartItems.length === 0" -->
+    <div  class="empty-cart-container flex-grow flex flex-col items-center justify-center text-center pt-20">
+        <div class="flex flex-col items-center">
+            <img src="assets/cart/cart.png" class="w-60 h-52 mb-4" alt="Cart is empty">
+            <p class="text-lg">Your cart is empty</p>
+            <p class="text-sm mb-4">You can go to the home page to view more restaurants</p>
+
+            <!-- Link styled as a button -->
+            <a href="" class="px-4 py-2 bg-orange-600 text-white rounded-md  border-orange-600">
+                SEE RESTAURANTS NEAR YOU
+            </a>
+        </div>
+
+        <!-- Footer-like Section (Visible Only When Cart is Empty) -->
+        <div class="w-full mt-8 bg-gray-50 flex flex-row justify-center py-4">
+            <div class="flex flex-col">
+               <div>
+                <p>Account</p>
+               </div>
+               <p>Delivery adddress</p>
+               <p>Payment</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h1>Cart Empty</h1>
+                <img src="assets/cart/blackcart.png" class="w-52 h-52 ml-12" alt="Footer Image">
+                <p>Good food is always cooking! Go ahead, order some yummy items from the menu.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Items List *ngIf="cartItems.length > 0" -->
+    <div >
+       
+          
+      </div>
+</div>

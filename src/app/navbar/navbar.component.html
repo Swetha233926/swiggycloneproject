@@ -5,7 +5,8 @@
         <!-- Logo and Search -->
         <div class="flex items-center">
             <img src="assets/navbar/logo.png" alt="Logo" class="h-12" />
-            <input type="text" placeholder="Search" class="border-b border-gray-800 outline-none focus:border-blue-500 m-2 md:m-4" />
+            <input *ngIf="!inCartView" type="text" placeholder="Search" class="border-b border-gray-800 outline-none focus:border-blue-500 m-2 md:m-4" />
+            <p *ngIf="inCartView" class="font-bold pl-3 text-gray-700 text-xs">SECURE CHECKOUT</p>
         </div>
 
         <!-- Hamburger Menu for Mobile -->
@@ -17,13 +18,15 @@
 
         <!-- Menu items -->
         <div class="hidden md:flex items-center space-x-6">
-            <a href="#" class="text-gray-800 flex items-center">
+            <a *ngIf="!inCartView" href="#" class="text-gray-800 flex items-center">
                 <i class="bi bi-house-door mr-2"></i> Swiggy Corporate
             </a>
-            <a href="#" class="text-gray-800 flex items-center">
+            <a *ngIf="!inCartView" href="#" class="text-gray-800 flex items-center">
                 <i class="bi bi-search mr-2"></i> Search
             </a>
-            <a href="#" class="text-gray-800 flex items-center">
+        
+
+            <a *ngIf="!inCartView" href="#" class="text-gray-800 flex items-center">
                 <i class="bi bi-gift mr-2"></i> Offers
             </a>
             <a href="#" class="text-gray-800 flex items-center">
@@ -35,16 +38,31 @@
             <!-- <a routerLink="signin" href="signin" class="text-gray-800 flex items-center">
                 <i class="bi bi-person mr-2"></i> Sign In  
               </a> -->
-              <a routerLink="signin" href="signin" *ngIf="!userName" class="text-gray-800 flex items-center">
-                <i class="bi bi-person mr-2"></i> Sign In
+
+              <a *ngIf="isLoggedIn" class="text-white flex items-center">
+                <span class="mr-2">Welcome, {{ userName }}!</span>
               </a>
-              <a *ngIf="userName" class="text-gray-800 flex items-center">
-                {{ userName }}
+              <a *ngIf="isLoggedIn" (click)="onLogout()" class="text-white bg-red-500 px-4 py-2 rounded-md hover:bg-red-600">
+                {{userName}} Logout
               </a>
               
-            <a href="#" class="text-gray-800 flex items-center">
+              <!-- Before Login - Sign In Button -->
+              <a *ngIf="!isLoggedIn" routerLink="signin" href="signin" class="text-gray-800 flex items-center">
+                <i class="bi bi-person mr-2"></i> Sign In
+              </a>
+             
+
+
+              <!-- <a routerLink="signin" href="signin" *ngIf="!userName" class="text-gray-800 flex items-center">
+                <i class="bi bi-person mr-2"></i> Sign In
+              </a> -->
+              
+              
+            <a *ngIf="!inCartView" routerLink="checkout" href="checkout" class="text-gray-800 flex items-center">
                 <i class="bi bi-cart mr-2"></i> Cart 
             </a>
+
+            
         </div>
     </div>
 

@@ -1,8 +1,8 @@
-<div class="justify-center flex mt-10">
-  <div class="card flex-col bg-white p-8 rounded-lg shadow-lg">
+<!-- <div class="justify-center flex mt-10 border">
+  <div class="flex-col">
     
-    <!-- Row containing the text and image side-by-side -->
-    <div class="flex items-center mb-5">
+   
+    <div class="flex items-center">
       <div>
         <h1 class="font-bold" style="font-size: xx-large;">Login</h1>
         <p>or <span class="text-[#ff5200]">create an account</span></p>
@@ -10,12 +10,105 @@
       <img src="assets/navbar/signin.png" class="w-24 ml-4" alt="">
     </div>
 
-    <!-- Name and Phone Number input fields -->
-    <input type="text" placeholder="Name" [(ngModel)]="name" id="name" class="border p-2 mt-5 mb-3 w-full"><br>
-    <input type="number" placeholder="Phone Number" [(ngModel)]="phoneNumber" id="phoneNumber" class="border p-2 mt-3 mb-5 w-full"><br>
-    
-    <!-- Login Button -->
+    Phone number input and login button 
+    <input type="number" placeholder="Phone Number" [(ngModel)]="phoneNumber" id="phoneNumber" class="border p-2 mt-5 mb-5"><br>
     <button (click)="loginUser()" class="box-border border bg-[#ff5200] pt-2 pb-2 pl-28 pr-28 text-white mb-4">Login</button>
-    <p class="text-gray-600 text-sm">By clicking on Login, I accept the Terms & Conditions & Privacy Policy</p>
+    <p>By clicking on Login, I accept the Terms & Conditions & Privacy Policy</p>
   </div>
+</div> -->
+<!-- sign.component.html -->
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <!-- Main container for Sign-up or Login -->
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
+
+    <!-- Success or Error Message -->
+    <div *ngIf="successMessage" class="text-green-500 text-center mb-4">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="text-red-500 text-center mb-4">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Form Title -->
+    <h2 class="text-2xl font-bold text-center mb-6">{{ isLoginMode ? 'Login' : 'Create Account' }}</h2>
+
+    <!-- Form -->
+    <form (ngSubmit)="isLoginMode ? onLogin() : onSignUp()">
+
+      <!-- Name field for Sign-up only -->
+      <div *ngIf="!isLoginMode" class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="name"
+          name="name"
+          required
+          class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Email field -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Phone field -->
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-600">Phone</label>
+        <input
+          type="text"
+          id="phone"
+          [(ngModel)]="phone"
+          name="phone"
+          required
+          class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Submit button -->
+      <div class="mb-6">
+        <button
+          type="submit"
+          class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </button>
+      </div>
+
+      <!-- Toggle between login and sign-up -->
+      <div class="text-center text-sm">
+        <span *ngIf="isLoginMode">Don't have an account?</span>
+        <span *ngIf="!isLoginMode">Already have an account?</span>
+        <button
+          (click)="isLoginMode = !isLoginMode"
+          class="text-blue-500 hover:underline"
+        >
+          {{ isLoginMode ? 'Create one' : 'Login' }}
+        </button>
+      </div>
+    </form>
+
+    <!-- Dashboard (Visible if logged in) -->
+    <div *ngIf="isLoggedIn" class="mt-6 text-center">
+      <h3 class="text-xl font-bold mb-4">Dashboard</h3>
+      <p>Welcome, {{ email }}!</p>
+      <button
+        (click)="onLogout()"
+        class="mt-4 w-full py-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+
 </div>

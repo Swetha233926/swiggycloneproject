@@ -1,0 +1,74 @@
+<!-- navbar.component.html -->
+
+<nav class="bg-white shadow-md p-2 fixed w-full top-0 left-0 z-10">
+    <div class="container mx-auto flex justify-between items-center px-4 sm:px-20">
+        <!-- Logo and Search -->
+        <div class="flex items-center">
+            <img src="assets/navbar/logo.png" alt="Logo" class="h-12" />
+            <input type="text" placeholder="Search" class="border-b border-gray-800 outline-none focus:border-blue-500 m-2 md:m-4" />
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="flex md:hidden">
+            <button (click)="toggleMobileMenu()" class="text-gray-800 focus:outline-none">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
+        </div> 
+
+        <!-- Menu items -->
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#" class="text-gray-800 flex items-center">
+                <i class="bi bi-house-door mr-2"></i> Swiggy Corporate
+            </a>
+            <a href="#" class="text-gray-800 flex items-center">
+                <i class="bi bi-search mr-2"></i> Search
+            </a>
+            <a href="#" class="text-gray-800 flex items-center">
+                <i class="bi bi-gift mr-2"></i> Offers
+            </a>
+            <a href="#" class="text-gray-800 flex items-center">
+                <i class="bi bi-question-circle mr-2"></i> Help
+            </a>
+            <!-- <a href=" " class="text-gray-800 flex items-center">
+                <i class="bi bi-person mr-2"></i>Sign In  
+            </a>     -->
+            <!-- <a routerLink="signin" href="signin" class="text-gray-800 flex items-center">
+                <i class="bi bi-person mr-2"></i> Sign In  
+              </a> -->
+              <a routerLink="signin" href="signin" *ngIf="!userName" class="text-gray-800 flex items-center">
+                <i class="bi bi-person mr-2"></i> Sign In
+              </a>
+              <a *ngIf="userName" class="text-gray-800 flex items-center">
+                {{ userName }}
+              </a>
+              
+            <a href="#" class="text-gray-800 flex items-center">
+                <i class="bi bi-cart mr-2"></i> Cart 
+            </a>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-white shadow-md" [ngClass]="{'hidden': !isMobileMenuOpen}">
+        <div class="flex flex-col items-center space-y-2 p-4">
+            <a href="#" class="text-gray-800 flex items-center w-full">
+                <i class="bi bi-house-door mr-2"></i> Swiggy Corporate
+            </a>
+            <a href="#" class="text-gray-800 flex items-center w-full">
+                <i class="bi bi-search mr-2"></i> Search
+            </a>
+            <a href="#" class="text-gray-800 flex items-center w-full">
+                <i class="bi bi-gift mr-2"></i> Offers
+            </a>
+            <a href="#" class="text-gray-800 flex items-center w-full">
+                <i class="bi bi-question-circle mr-2"></i> Help
+            </a>
+            <a href="#" class="text-gray-800 flex items-center w-full">
+                <i class="bi bi-person mr-2"></i> Sign In
+            </a>
+            <a href="#" class="text-gray-800 flex items-center w-full">
+                <i class="bi bi-cart mr-2"></i> Cart 
+            </a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,21 @@
+<div class="justify-center flex mt-10">
+  <div class="card flex-col bg-white p-8 rounded-lg shadow-lg">
+    
+    <!-- Row containing the text and image side-by-side -->
+    <div class="flex items-center mb-5">
+      <div>
+        <h1 class="font-bold" style="font-size: xx-large;">Login</h1>
+        <p>or <span class="text-[#ff5200]">create an account</span></p>
+      </div>
+      <img src="assets/navbar/signin.png" class="w-24 ml-4" alt="">
+    </div>
+
+    <!-- Name and Phone Number input fields -->
+    <input type="text" placeholder="Name" [(ngModel)]="name" id="name" class="border p-2 mt-5 mb-3 w-full"><br>
+    <input type="number" placeholder="Phone Number" [(ngModel)]="phoneNumber" id="phoneNumber" class="border p-2 mt-3 mb-5 w-full"><br>
+    
+    <!-- Login Button -->
+    <button (click)="loginUser()" class="box-border border bg-[#ff5200] pt-2 pb-2 pl-28 pr-28 text-white mb-4">Login</button>
+    <p class="text-gray-600 text-sm">By clicking on Login, I accept the Terms & Conditions & Privacy Policy</p>
+  </div>
+</div>

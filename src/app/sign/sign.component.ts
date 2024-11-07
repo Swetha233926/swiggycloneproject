@@ -12,44 +12,33 @@ import { AuthService } from '../auth.service';
   templateUrl: './sign.component.html',
   styleUrls: ['./sign.component.scss']
 })
-
 export class SignComponent {
   name: string = '';
   email: string = '';
   phone: string = '';
   errorMessage: string = '';
   successMessage: string = '';
-  isLoggedIn: boolean = false;
   isLoginMode: boolean = true; // Toggle between login and sign-up
 
   private apiUrl = 'https://6729de386d5fa4901b6ebc8a.mockapi.io/users'; // Mock API URL
 
-  constructor(private http: HttpClient, private authService: AuthService) {
-    const userData = localStorage.getItem('user');
-    if (userData) {
-      this.isLoggedIn = true;
-      this.successMessage = 'Welcome back!';
-    }
+  constructor(private http: HttpClient, private authService: AuthService) {}
+
+  // Getter for isLoggedIn that checks localStorage directly
+  get isLoggedIn(): boolean {
+    return !!localStorage.getItem('user');
   }
 
   // Create Account (Sign-up)
   onSignUp() {
     if (this.name && this.email && this.phone) {
-      // Check if a user with the same email or phone exists
       this.authService.createAccount({ email: this.email, phone: this.phone }).subscribe(
         (users) => {
           if (users.length > 0) {
-            // If user exists, show error message
             this.errorMessage = 'An account with this email or phone number already exists.';
             this.successMessage = '';
           } else {
-            // Proceed to create the new user if no match found
-            const userData = {
-              name: this.name,
-              email: this.email,
-              phone: this.phone,
-            };
-
+            const userData = { name: this.name, email: this.email, phone: this.phone };
             this.authService.registerAccount(userData).subscribe(
               () => {
                 this.successMessage = 'Account created successfully!';
@@ -82,7 +71,6 @@ export class SignComponent {
         (users) => {
           if (users.length > 0) {
             localStorage.setItem('user', JSON.stringify(users[0]));
-            this.isLoggedIn = true;
             this.errorMessage = '';
             this.successMessage = 'You are logged in!';
           } else {
@@ -103,9 +91,8 @@ export class SignComponent {
 
   // Logout
   onLogout() {
-    localStorage.removeItem('user');
-    this.isLoggedIn = false;
+    localStorage.removeItem('user'); // Remove user data from localStorage
     this.successMessage = '';
-    this.errorMessage = 'You have logged out.';
+    this.errorMessage = 'You have logged out. Please log in again to place an order.';
   }
 }

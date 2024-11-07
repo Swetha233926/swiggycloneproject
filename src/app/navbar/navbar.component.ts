@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter ,Input} from '@angular/core';
-import { UserService } from '../user.service';
 import { CommonModule } from '@angular/common';
 
 
@@ -18,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn: boolean = false;
   userName: string = '';
-  constructor(private userService: UserService) {}
+
 
   ngOnInit() {
     // Check if user data exists in local storage

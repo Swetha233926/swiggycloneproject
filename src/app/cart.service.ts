@@ -1,29 +1,46 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+
+interface CartItem {
+  name: string;
+  price: string;
+  image: string;
+  restaurant: string;
+  location: string;
+  quantity: number; // Added quantity to manage item count
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-  private cartSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);  // Start with an empty array
-  cart$: Observable<any[]> = this.cartSubject.asObservable();  // Observable to subscribe to
+  private cartKey = 'cart';
 
-  // Method to add items to the cart
-  addToCart(item: any): void {
-    const currentCart = this.cartSubject.getValue();  // Get current cart
-    this.cartSubject.next([...currentCart, item]);  // Update cart with new item
-    console.log('Updated cart:', currentCart);  // Log the updated cart
+  // Get all cart items from localStorage
+  getCartItems(): CartItem[] {
+    const cart = localStorage.getItem(this.cartKey);
+    return cart ? JSON.parse(cart) : [];
   }
 
-  // Method to remove items from the cart
-  removeFromCart(item: any): void {
-    const currentCart = this.cartSubject.getValue();  // Get current cart
-    const updatedCart = currentCart.filter(i => i.id !== item.id);  // Filter out the item
-    this.cartSubject.next(updatedCart);  // Update cart
+  // Add an item to the cart and update localStorage
+  addItem(item: CartItem): void {
+    const cartItems = this.getCartItems();
+    const existingItem = cartItems.find(cartItem => cartItem.name === item.name);
+    if (existingItem) {
+      existingItem.quantity++; // If item exists, just increment the quantity
+    } else {
+      item.quantity = 1; // If new item, initialize with quantity 1
+      cartItems.push(item);
+    }
+    localStorage.setItem(this.cartKey, JSON.stringify(cartItems));
   }
 
-  // Method to clear the cart
+  // Update cart items in localStorage
+  updateCartItems(cartItems: CartItem[]): void {
+    localStorage.setItem(this.cartKey, JSON.stringify(cartItems));
+  }
+
+  // Clear all items from the cart
   clearCart(): void {
-    this.cartSubject.next([]);  // Clear cart
+    localStorage.removeItem(this.cartKey);
   }
 }

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ScrollNavigationComponent } from '../scroll-navigation/scroll-navigation.component';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject } from 'rxjs';
-
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -14,19 +13,28 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./restaurant.component.scss']
 })
 export class RestaurantComponent {
-  // Initially set the dropdown to be visible
-  isDropdownVisible = true; 
+  isDropdownVisible = true;
+  isFlavourFunDropdownVisible = false;
+
+  constructor(private cartService: CartService) {} // Inject CartService
 
   // Method to toggle the visibility of the dropdown
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
 
-  isFlavourFunDropdownVisible: boolean = false; // For the "Flavour Fun Range" section
-
   // Toggle function for the "Flavour Fun Range" section
   toggleFlavourFunDropdown(): void {
     this.isFlavourFunDropdownVisible = !this.isFlavourFunDropdownVisible;
+  }
+
+
+  // Add item to the cart
+  addToCart(item: any) {
+    // Call CartService to add item
+    this.cartService.addItem(item);
+
+    alert(`${item.name} added to cart!`);
   }
 
 

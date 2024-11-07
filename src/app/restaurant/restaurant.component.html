@@ -8,6 +8,7 @@
             <a href="" class="text-red-700">Pizzas</a>
             <p>Outlet Bachupally <span></span></p>
             <p>50-55min</p>
+            
         </div>
 
         <section class="my-12 relative">
@@ -72,6 +73,7 @@
                         class="w-full h-full object-cover"
                       />
                       <div class="absolute bottom-0 left-0 flex items-center p-2 bg-gradient-to-t from-black to-transparent w-full">
+                        <span class="hidden">Pizza veg</span>
                         <span class="text-white font-bold text-lg mr-2">₹239</span>
                         <button class="ml-auto px-8 py-1 bg-white text-green-500 rounded-lg font-bold" >ADD</button>
                       </div>
@@ -113,11 +115,20 @@
                 <!-- Food image section (right side) -->
                 <div class="relative w-1/2 ml-4">
                   <img src="assets/restaurant/pizzas/one.png" alt="Food Item 1" class="w-40 h-32 object-cover rounded-xl">
-                  <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white rounded-full">
-                    Add
-                  </button>
+                  <button (click)="addToCart({
+                    name: 'Veggie Supreme',
+                    price: '₹399',
+                    image: 'assets/restaurant/pizzas/one.png',
+                    restaurant: 'Pizza Hut',
+                    location: 'Bachupally',
+                    
+                  })" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-blue-500 text-white rounded-full">
+                  Add
+                </button>
                 </div>
               </div>
+
+              
             </div>
           </div>   
         

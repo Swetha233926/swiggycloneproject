@@ -1,45 +1,59 @@
 <!-- Navbar component with custom input property -->
 <app-navbar [inCartView]="true"></app-navbar>
 
-<!-- Cart container with padding -->
 <div class="cart-container p-4 min-h-screen flex flex-col justify-between">
-  
-    <!-- Cart Title -->
-    <h2 class="font-bold text-2xl mb-4">Your Cart</h2>
+  <h2 class="font-bold text-2xl mb-4">Your Cart</h2>
 
-    <!-- Empty Cart Message *ngIf="cartItems.length === 0" -->
-    <div  class="empty-cart-container flex-grow flex flex-col items-center justify-center text-center pt-20">
-        <div class="flex flex-col items-center">
-            <img src="assets/cart/cart.png" class="w-60 h-52 mb-4" alt="Cart is empty">
-            <p class="text-lg">Your cart is empty</p>
-            <p class="text-sm mb-4">You can go to the home page to view more restaurants</p>
+  <div *ngIf="cartItems.length === 0" class="empty-cart-container flex-grow flex flex-col items-center justify-center text-center pt-20">
+    <div class="flex flex-col items-center">
+      <img src="assets/cart/cart.png" class="w-60 h-52 mb-4" alt="Cart is empty">
+      <p class="text-lg">Your cart is empty</p>
+      <p class="text-sm mb-4">You can go to the home page to view more restaurants</p>
 
-            <!-- Link styled as a button -->
-            <a href="" class="px-4 py-2 bg-orange-600 text-white rounded-md  border-orange-600">
-                SEE RESTAURANTS NEAR YOU
-            </a>
-        </div>
-
-        <!-- Footer-like Section (Visible Only When Cart is Empty) -->
-        <div class="w-full mt-8 bg-gray-50 flex flex-row justify-center py-4">
-            <div class="flex flex-col">
-               <div>
-                <p>Account</p>
-               </div>
-               <p>Delivery adddress</p>
-               <p>Payment</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <h1>Cart Empty</h1>
-                <img src="assets/cart/blackcart.png" class="w-52 h-52 ml-12" alt="Footer Image">
-                <p>Good food is always cooking! Go ahead, order some yummy items from the menu.</p>
-            </div>
-        </div>
+      <a routerLink=" " href="" class="px-4 py-2 bg-orange-600 text-white rounded-md border-orange-600">
+        SEE RESTAURANTS NEAR YOU
+      </a>
     </div>
 
-    <!-- Cart Items List *ngIf="cartItems.length > 0" -->
-    <div >
-       
-          
+    <div class="w-full mt-8 bg-gray-50 flex flex-row justify-center py-4">
+      <div class="flex flex-col">
+        <p>Account</p>
+        <p>Delivery address</p>
+        <p>Payment</p>
       </div>
+      <div class="flex flex-col items-center">
+        <h1>Cart Empty</h1>
+        <img src="assets/cart/blackcart.png" class="w-52 h-52 ml-12" alt="Footer Image">
+        <p>Good food is always cooking! Go ahead, order some yummy items from the menu.</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <div *ngFor="let item of cartItems" class="cart-item flex mb-4 border-b pb-4">
+      <img [src]="item.image || 'assets/default-image.jpg'" alt="Food Image" class="w-24 h-24 object-cover rounded-md mr-4">
+      <div class="flex flex-col justify-center">
+        <p class="font-bold">{{ item.name }}</p>
+        <p class="text-blue-600">{{ item.price || 'Price not available' }}</p>
+        <p class="text-gray-500">From {{ item.restaurant }}, {{ item.location }}</p>
+        <div class="flex items-center space-x-2 mt-2">
+          <button (click)="decreaseQuantity(item)" class="px-2 py-1 bg-gray-300 rounded-md">-</button>
+          <p class="font-semibold">{{ item.quantity }}</p>
+          <button (click)="increaseQuantity(item)" class="px-2 py-1 bg-gray-300 rounded-md">+</button>
+        </div>
+      </div>
+    </div>
+
+    <button (click)="clearCart()" class="px-4 py-2 bg-red-500 text-white rounded-md mt-4" [disabled]="cartItems.length === 0">
+      Clear Cart
+    </button>
+
+    <div class="mt-4">
+      <button *ngIf="isLoggedIn" (click)="placeOrder()" class="px-4 py-2 bg-green-500 text-white rounded-md">
+        Place Order
+      </button>
+      <p *ngIf="!isLoggedIn" class="text-red-500 mt-2">Please sign in to place the order.</p>
+    </div>
+  </div>
 </div>
+

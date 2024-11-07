@@ -16,7 +16,7 @@ export class RestaurantComponent {
   isDropdownVisible = true;
   isFlavourFunDropdownVisible = false;
 
-  constructor(private cartService: CartService) {} // Inject CartService
+  constructor(private cartService: CartService) {} 
 
   // Method to toggle the visibility of the dropdown
   toggleDropdown() {
@@ -31,7 +31,7 @@ export class RestaurantComponent {
 
   // Add item to the cart
   addToCart(item: any) {
-    // Call CartService to add item
+  
     this.cartService.addItem(item);
 
     alert(`${item.name} added to cart!`);

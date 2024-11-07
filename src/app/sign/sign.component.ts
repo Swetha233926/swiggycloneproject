@@ -18,9 +18,9 @@ export class SignComponent {
   phone: string = '';
   errorMessage: string = '';
   successMessage: string = '';
-  isLoginMode: boolean = true; // Toggle between login and sign-up
+  isLoginMode: boolean = true; 
 
-  private apiUrl = 'https://6729de386d5fa4901b6ebc8a.mockapi.io/users'; // Mock API URL
+  private apiUrl = 'https://6729de386d5fa4901b6ebc8a.mockapi.io/users'; 
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

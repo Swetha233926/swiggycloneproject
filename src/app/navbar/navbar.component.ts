@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class NavbarComponent implements OnInit {
 
   
-  isMobileMenuOpen = false; // State to track mobile menu visibility
+  isMobileMenuOpen = false; 
 
   isLoggedIn: boolean = false;
   userName: string = '';
@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogin() {
-    // You can add your login logic here
+    
     console.log('Login clicked');
   }
 

@@ -15,7 +15,7 @@ export class ScrollNavigationComponent implements AfterViewInit {
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
-    // Get the container element by ID after the view initializes
+    
     this.containerElement = document.getElementById(this.containerId)!;
   }
 

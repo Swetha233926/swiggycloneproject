@@ -1,93 +1,103 @@
 <!-- home.component.html -->
-<app-navbar></app-navbar> <!-- Listen to the event -->
+<app-navbar [inhomeview]="true"></app-navbar> <!-- Listen to the event -->
 
-<div class="ml-24 mr-24 mt-28">
-    
-
- 
-  
+<div class="mt-28">
   <!-- "What's on Your Mind" Slider (Food Categories) -->
-  <section class="my-12 relative">
+  <section class="my-12 mx-40 relative">
     <h2 class="text-2xl font-bold mb-4">What's on Your Mind?</h2>
     <div class="flex overflow-hidden space-x-4" id="category-container2">
       
-    <div class="w-40 flex-shrink-0">
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
         <img src="assets/home/hamper.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/sandwich.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-    <img src="assets/home/biryani.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/cakes.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/khichdi.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/noodles.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/rolls.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/chole.png" alt="Burgers" class="h-15">
-    </div>
-    <div class="w-40 flex-shrink-0">
-      <img src="assets/home/parota.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/pavbhaji.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-  <img src="assets/home/pureveg.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/rasgulla.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/lassi.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/gulabjamun.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/northindian.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/chinese.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/coffee.png" alt="Burgers" class="h-15">
-  </div>
-  <div class="w-40 flex-shrink-0">
-    <img src="assets/home/desserts.png" alt="Burgers" class="h-15">
-  </div>
+      </a>
+
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
+        <img src="assets/home/sandwich.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
+        <img src="assets/home/biryani.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
+        <img src="assets/home/cakes.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
+        <img src="assets/home/noodles.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
+        <img src="assets/home/rolls.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a routerLink="restaurant" href="restaurant" class="w-40 flex-shrink-0">
+        <img src="assets/home/chole.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/parota.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/pavbhaji.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/pureveg.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/rasgulla.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/lassi.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/gulabjamun.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/northindian.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/chinese.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/coffee.png" alt="Burgers" class="h-15">
+      </a>
+
+      <a href="#" class="w-40 flex-shrink-0">
+        <img src="assets/home/desserts.png" alt="Burgers" class="h-15">
+      </a>
     
       <!-- Add more food items as needed -->
-  </div>
-  
-   
+    </div>
+
     <app-scroll-navigation [containerId]="'category-container2'"></app-scroll-navigation>
   </section>
-  
+
+  <hr class="my-5 mx-40">
+
   <!-- Top Restaurants Section -->
-  <section class="my-12 relative">
+  <section class="my-12 mx-40 relative">
     <h2 class="text-2xl font-bold mb-4">Top restaurant chains in Chhindwara</h2>
     <div class="flex overflow-hidden space-x-4" id="category-container1">
       <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
-          src="assets/restaurants/satkar.png"
+          src="assets/home/restaurants/one.png"
           alt="Restaurant Image"
           class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px;"
+          style="border-radius: 20px; width: 280px; height: 180px;"
         />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
+        <h3 class="text-xl font-semibold mt-2 ml-2">Pizza Hut</h3>
+        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.1 50-55mins</p>
+        <p class="text-gray-500 ml-2">Pizzas</p>
+        <p class="text-gray-500 ml-2">Bachupally</p>
       </a>
 
       <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
@@ -95,7 +105,7 @@
           src="assets/restaurants/satkar.png"
           alt="Restaurant Image"
           class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px;"
+          style="border-radius: 20px; width: 280px; height: 180px;"
         />
         <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
         <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
@@ -103,545 +113,58 @@
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
       </a>
 
+      <!-- KFC -->
       <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
+          src="assets/home/restaurants/kfc.png"
+          alt="KFC Image"
           class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px;"
+          style="border-radius: 20px; width: 280px; height: 180px;"
         />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
+        <h3 class="text-xl font-semibold mt-2 ml-2">KFC</h3>
+        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.7 30-35mins</p>
+        <p class="text-gray-500 ml-2">Chicken, Fast Food, Burgers...</p>
         <p class="text-gray-500 ml-2">Mohan Nagar</p>
       </a>
 
+      <!-- McDonald's -->
       <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
+          src="assets/home/restaurants/mc.png"
+          alt="McDonald's Image"
           class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px;"
+          style="border-radius: 20px; width: 280px; height: 180px;"
         />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
+        <h3 class="text-xl font-semibold mt-2 ml-2">McDonald's</h3>
+        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.5 20-25mins</p>
+        <p class="text-gray-500 ml-2">Burgers, Fries, Fast Food...</p>
+        <p class="text-gray-500 ml-2">Sector 21</p>
       </a>
 
+     <!-- Chinese Work -->
       <a routerLink="restaurant" href="restaurant" class="p-4 flex-shrink-0 block" style="text-decoration: none;">
         <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
+          src="assets/home/restaurants/chinese.png"
+          alt="Chinese Work Image"
           class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px;"
+          style="border-radius: 20px; width: 280px; height: 180px;"
         />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins</p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
+        <h3 class="text-xl font-semibold mt-2 ml-2">Chinese Work</h3>
+        <p class="font-semibold ml-2"><span><i class="bi bi-star mr-1"></i></span>4.3 35-40mins</p>
+        <p class="text-gray-500 ml-2">Chinese, Noodles, Dim Sum...</p>
+        <p class="text-gray-500 ml-2">New City Center</p>
       </a>
+
     
       
     </div>
     <app-scroll-navigation [containerId]="'category-container1'"></app-scroll-navigation>
   </section>
 
-  <!-- Filter and Sort Options -->
-  <section class="my-8">
-    <h2 class="text-xl font-bold mb-4">Restaurants with online food delivery in Chhindwara</h2>
-    <div class="flex space-x-2 overflow-x-auto flex-wrap">
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Filter<i class="bi bi-funnel"></i></button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Sort By<i class="bi bi-chevron-down"></i></button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Fast Delivery</button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">New on Swiggy</button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Ratings 4.0+</button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Pure Veg</button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Offers</button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Rs. 300-Rs.600</button>
-      <button class="px-4 py-2 bg-gray-200 rounded-3xl">Less than Rs. 300</button>
-    </div>
-  </section>
-  
-   
-  <!-- Restaurants with online food delivery in Chhindwara -->
-  <section class="my-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
-      <!-- First Item -->
-      <div class="p-4">
-        <img
-          src="assets/restaurants/satkar.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">The Belgian Waffle Co.</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.6 45-50mins
-        </p>
-        <p class="text-gray-500 ml-2">Waffle, Desserts, Ice Cream,...</p>
-        <p class="text-gray-500 ml-2">Mohan Nagar</p>
-      </div>
-    
-      <!-- Second Item -->
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Pizza Palace</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.2 30-35mins
-        </p>
-        <p class="text-gray-500 ml-2">Pizza, Fast Food</p>
-        <p class="text-gray-500 ml-2">Central Park</p>
-      </div>
-    
-      <!-- Third Item -->
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Sushi Spot</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.8 20-25mins
-        </p>
-        <p class="text-gray-500 ml-2">Sushi, Japanese</p>
-        <p class="text-gray-500 ml-2">Downtown</p>
-      </div>
-    
-      <!-- Fourth Item -->
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-      <div class="p-4">
-        <img
-          src="assets/restaurants/restaurant2.png"
-          alt="Restaurant Image"
-          class="w-40 h-42 object-cover"
-          style="border-radius: 20px; width: 280px; height: 180px;"
-        />
-        <h3 class="text-xl font-semibold mt-2 ml-2">Burger Joint</h3>
-        <p class="font-semibold ml-2">
-          <span><i class="bi bi-star mr-1"></i></span>4.3 25-30mins
-        </p>
-        <p class="text-gray-500 ml-2">Burgers, Fast Food</p>
-        <p class="text-gray-500 ml-2">Green Avenue</p>
-      </div>
-
-
-    </div>
-  </section>
-
-  <!-- Best Places to Eat Across Cities -->
-   <section class="my-8">
-    <h2 class="text-xl font-bold mb-4">Best Places to Eat Across Cities</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  p-2">
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-    </div>
-
-   </section>
-
-   <!-- Best Cuisines Near Me -->
-   <section class="my-8">
-    <h2 class="text-xl font-bold mb-4">Best Cuisines Near Me</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-2">
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">Best Restaurants in Bangalore</p>
-      </div>
-      
-      <!-- <button
-        id="show-more-btn"
-        class=" border border-[rgba(2, 6, 12, 0.05)] rounded-md -py-3"
-        onclick="toggleItems()"
-        >
-        Show More
-      </button> -->
-      <div class="p-4">
-        <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center" >Best Restaurants in Bangalore</p>
-      </div>
-
-    </div>
-
-   </section>
-
-   
-   <!-- Explore Every Restaurants Near Me -->
-   <section class="my-8">
-  <h2 class="text-xl font-bold mb-4 ">
-    Explore Every Restaurant Near Me
-  </h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-2">
-    <div class="p-4">
-      <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">
-        Best Restaurants in Bangalore
-      </p>
-    </div>
-
-    <div class="p-4">
-      <p class="box-border border border-[rgba(2, 6, 12, 0.05)] rounded-md p-2 font-semibold text-[rgba(2, 6, 12, 0.75)] text-center">
-        Explore Top Rated Restaurants Near Me
-      </p>
-    </div>
-  </div>
-</section>
-
+  <hr class="mt-5 mx-40">
 </div>
 
-<!-- Footer section -->
-    
-<div class="px-4 sm:px-20 flex-col bg-gray-100">
-  <div class="mt-8 px-12 flex flex-col ml-28 gap-5 pt-8 lg:flex-row">
-    <p class="font-bold text-xl pt-5">For better experience, download the Swiggy app now</p>
-    <a href="">
-      <img src="assets/home/footer1.png" alt="" style="width: 230px; height: 80px;">
-    </a>
-    <a href="">
-      <img src="assets/home/footer2.png" alt="" style="width: 230px; height: 80px;">
-    </a>
-  </div>
-  <div class="flex flex-col  gap-2 pb-8 mt-12 overflow-x-auto sm:flex-col lg:flex-row ml-40">
-    <div class="flex-shrink-0">
-      <img src="assets/home/swiggy.png" alt="">
-      <p>© 2024 Swiggy Limited</p>
-    </div>
-
-    <div class="flex-col ml-20">
-      <h2 class="font-bold mb-2">Company</h2>
-      <ul class="list-none space-y-2">
-        <li>About Us</li>
-        <li>Swiggy Corporate</li>
-        <li>Careers</li>
-        <li>Team</li>
-        <li>Swiggy One</li>
-        <li>Swiggy Instamart</li>
-        <li>Swiggy Dineout</li>
-        <li>Swiggy Genie</li>
-      </ul>
-    </div>
-
-    <div class="flex-col ml-12">
-      <h2 class="font-bold mb-2">Contact us</h2>
-      <ul class="list-none space-y-2">
-        <li>Help & Support</li>
-        <li>Partner with us</li>
-        <li>Ride with us</li>
-      </ul>
-
-      <h2 class="font-bold mt-16 mb-2">Legal</h2>
-      <ul class="list-none space-y-2">
-        <li>Terms & Conditions</li>
-        <li>Cookie Policy</li>
-        <li>Privacy Policy</li>
-        <li>Investor Relations</li>
-      </ul>
-    </div>
-
-    <div class="flex-col ml-12">
-      <h2 class="font-bold mb-2">Available in:</h2>
-      <ul class="list-none space-y-2">
-        <li>Bangalore</li>
-        <li>Gurgaon</li>
-        <li>Hyderabad</li>
-        <li>Delhi</li>
-        <li>Mumbai</li>
-        <li>Pune</li>
-      </ul>
-    </div>
-
-    <div class="flex-col ml-12">
-      <h2 class="font-bold mb-2">Life at Swiggy</h2>
-      <ul class="list-none space-y-2">
-        <li>Explore with Swiggy</li>
-        <li>Swiggy News</li>
-        <li>Snackables</li>
-      </ul>
-
-      <h2 class="font-bold mt-16">Social Links</h2>
-      <div class="flex gap-4">
-        <a href=""><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-pinterest"></i></a>
-        <a href=""><i class="bi bi-twitter"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-
+<app-offers></app-offers>
 
 
 

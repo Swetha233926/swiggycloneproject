@@ -36,15 +36,15 @@ export class NavbarComponent implements OnInit {
     this.userName = '';
   }
 
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen; // Toggle mobile menu visibility
-  }
   onLogin() {
     // You can add your login logic here
     console.log('Login clicked');
   }
 
   @Input() inCartView: boolean = false;
+  @Input() inoffersview: boolean = false;
+  @Input() inhomeview: boolean = false;
+
 
 
 }

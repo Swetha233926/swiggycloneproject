@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CartService } from '../cart.service';
+import { HttpClient } from '@angular/common/http'; // Import HttpClient to make HTTP requests
 
 interface CartItem {
   name: string;
@@ -23,8 +24,13 @@ export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   isLoggedIn: boolean = false;
   userName: string = ''; 
+  orderMessage: string = ''; // Variable to store the order placement message
 
-  constructor(private cartService: CartService, private cdRef: ChangeDetectorRef) {}
+  constructor(
+    private cartService: CartService,
+    private cdRef: ChangeDetectorRef,
+    private http: HttpClient  // Inject HttpClient to make HTTP requests
+  ) {}
 
   ngOnInit() {
     this.loadCartItems();
@@ -64,14 +70,48 @@ export class CartComponent implements OnInit {
     this.cartItems = [];
   }
 
+  // Place order method
   placeOrder() {
     if (this.isLoggedIn) {
-      console.log('Placing the order...');
+      // Prepare the order data to be sent to the MockAPI
+      const orderData = {
+        userName: this.userName,
+        orderDetails: this.cartItems,
+        message: 'Order placed successfully',
+        status: 'success'
+      };
+
+      // Make a POST request to MockAPI to place the order
+      this.http.post('https://6729de386d5fa4901b6ebc8a.mockapi.io/orders', orderData)
+        .subscribe(
+          response => {
+            this.orderMessage = 'Order placed successfully'; // Show success message
+            console.log(response); // Log the response from the API
+
+            // Trigger change detection after setting the message
+            this.cdRef.detectChanges();
+
+            // Hide the success message and clear the cart after 5 seconds
+            setTimeout(() => {
+              this.orderMessage = ''; // Clear the message
+              this.clearCart(); // Now, clear the cart
+            }, 5000);
+          },
+          error => {
+            this.orderMessage = 'Failed to place the order'; // Show error message
+            console.error('Error placing order: ', error); // Log the error
+
+            // Trigger change detection to update UI
+            this.cdRef.detectChanges();
+          }
+        );
     } else {
-      console.log('Please sign in to place the order.');
+      this.orderMessage = 'Please sign in to place the order.'; // Prompt user to log in if not logged in
+      this.cdRef.detectChanges(); // Trigger change detection
     }
   }
 
+  // Logout method
   onLogout() {
     // Step 1: Remove the user from localStorage
     localStorage.removeItem('user');

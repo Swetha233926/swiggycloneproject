@@ -1,22 +1,3 @@
-<!-- <div class="justify-center flex mt-10 border">
-  <div class="flex-col">
-    
-   
-    <div class="flex items-center">
-      <div>
-        <h1 class="font-bold" style="font-size: xx-large;">Login</h1>
-        <p>or <span class="text-[#ff5200]">create an account</span></p>
-      </div>
-      <img src="assets/navbar/signin.png" class="w-24 ml-4" alt="">
-    </div>
-
-    Phone number input and login button 
-    <input type="number" placeholder="Phone Number" [(ngModel)]="phoneNumber" id="phoneNumber" class="border p-2 mt-5 mb-5"><br>
-    <button (click)="loginUser()" class="box-border border bg-[#ff5200] pt-2 pb-2 pl-28 pr-28 text-white mb-4">Login</button>
-    <p>By clicking on Login, I accept the Terms & Conditions & Privacy Policy</p>
-  </div>
-</div> -->
-<!-- sign.component.html -->
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
 
   <!-- Main container for Sign-up or Login -->
@@ -79,7 +60,7 @@
       <div class="mb-6">
         <button
           type="submit"
-          class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          class="w-full py-2 bg-primary text-white rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
@@ -91,7 +72,7 @@
         <span *ngIf="!isLoginMode">Already have an account?</span>
         <button
           (click)="isLoginMode = !isLoginMode"
-          class="text-blue-500 hover:underline"
+          class="text-primary hover:underline"
         >
           {{ isLoginMode ? 'Create one' : 'Login' }}
         </button>

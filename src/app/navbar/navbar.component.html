@@ -1,92 +1,46 @@
-<!-- navbar.component.html -->
-
 <nav class="bg-white shadow-md p-2 fixed w-full top-0 left-0 z-10">
-    <div class="container mx-auto flex justify-between items-center px-4 sm:px-20">
+    <div class="container mx-auto flex justify-between items-center px-4 sm:px-20 flex-wrap">
         <!-- Logo and Search -->
-        <div class="flex items-center">
-            <img src="assets/navbar/logo.png" alt="Logo" class="h-12" />
-            <input *ngIf="!inCartView" type="text" placeholder="Search" class="border-b border-gray-800 outline-none focus:border-blue-500 m-2 md:m-4" />
+        <div class="flex items-center w-full sm:w-auto">
+            <img  src="assets/navbar/logo.png" alt="Logo" class="h-12" />
+            <input *ngIf="!inCartView " type="text" placeholder="Search" class="border-b border-gray-800 outline-none focus:border-blue-500 m-2 md:m-4 w-full sm:w-auto" />
             <p *ngIf="inCartView" class="font-bold pl-3 text-gray-700 text-xs">SECURE CHECKOUT</p>
         </div>
 
-        <!-- Hamburger Menu for Mobile -->
-        <div class="flex md:hidden">
-            <button (click)="toggleMobileMenu()" class="text-gray-800 focus:outline-none">
-                <i class="bi bi-list text-2xl"></i>
-            </button>
-        </div> 
-
         <!-- Menu items -->
-        <div class="hidden md:flex items-center space-x-6">
-            <a *ngIf="!inCartView" href="#" class="text-gray-800 flex items-center">
+        <div class="flex items-center space-x-6 md:space-x-6 flex-col md:flex-row w-full md:w-auto mt-4 sm:mt-0">
+            <a *ngIf="!inCartView"  href="#" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-house-door mr-2"></i> Swiggy Corporate
             </a>
-            <a *ngIf="!inCartView" href="#" class="text-gray-800 flex items-center">
+            <a *ngIf="!inCartView "  href="#" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-search mr-2"></i> Search
             </a>
         
-
-            <a *ngIf="!inCartView" href="#" class="text-gray-800 flex items-center">
+            <a *ngIf="!inCartView" routerLink="offers" href="offers" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-gift mr-2"></i> Offers
             </a>
-            <a href="#" class="text-gray-800 flex items-center">
+            <a href="#" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-question-circle mr-2"></i> Help
             </a>
-            <!-- <a href=" " class="text-gray-800 flex items-center">
-                <i class="bi bi-person mr-2"></i>Sign In  
-            </a>     -->
-            <!-- <a routerLink="signin" href="signin" class="text-gray-800 flex items-center">
-                <i class="bi bi-person mr-2"></i> Sign In  
-              </a> -->
-
-              <a *ngIf="isLoggedIn" class="text-white flex items-center">
-                <span class="mr-2">Welcome, {{ userName }}!</span>
-              </a>
-              <a *ngIf="isLoggedIn" (click)="onLogout()" class="text-white bg-red-500 px-4 py-2 rounded-md hover:bg-red-600">
-                {{userName}} Logout
-              </a>
+           
+            <a *ngIf="isLoggedIn" (click)="onLogout()" class="w-full md:w-auto">
+                <i class="bi bi-person mr-1"></i> {{userName}} 
+                <span class="text-white bg-red-500 px-4 py-2 rounded-md hover:bg-red-600">
+                  Logout
+                </span>
+            </a>
               
-              <!-- Before Login - Sign In Button -->
-              <a *ngIf="!isLoggedIn" routerLink="signin" href="signin" class="text-gray-800 flex items-center">
+            <!-- Before Login - Sign In Button -->
+            <a *ngIf="!isLoggedIn " routerLink="signin" href="signin" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-person mr-2"></i> Sign In
-              </a>
-             
-
-
-              <!-- <a routerLink="signin" href="signin" *ngIf="!userName" class="text-gray-800 flex items-center">
-                <i class="bi bi-person mr-2"></i> Sign In
-              </a> -->
+            </a>
               
-              
-            <a *ngIf="!inCartView" routerLink="checkout" href="checkout" class="text-gray-800 flex items-center">
+            <a *ngIf="!inCartView " routerLink="checkout" href="checkout" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-cart mr-2"></i> Cart 
             </a>
+
 
             
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="md:hidden bg-white shadow-md" [ngClass]="{'hidden': !isMobileMenuOpen}">
-        <div class="flex flex-col items-center space-y-2 p-4">
-            <a href="#" class="text-gray-800 flex items-center w-full">
-                <i class="bi bi-house-door mr-2"></i> Swiggy Corporate
-            </a>
-            <a href="#" class="text-gray-800 flex items-center w-full">
-                <i class="bi bi-search mr-2"></i> Search
-            </a>
-            <a href="#" class="text-gray-800 flex items-center w-full">
-                <i class="bi bi-gift mr-2"></i> Offers
-            </a>
-            <a href="#" class="text-gray-800 flex items-center w-full">
-                <i class="bi bi-question-circle mr-2"></i> Help
-            </a>
-            <a href="#" class="text-gray-800 flex items-center w-full">
-                <i class="bi bi-person mr-2"></i> Sign In
-            </a>
-            <a href="#" class="text-gray-800 flex items-center w-full">
-                <i class="bi bi-cart mr-2"></i> Cart 
-            </a>
         </div>
     </div>
 </nav>

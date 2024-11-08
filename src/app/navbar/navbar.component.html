@@ -20,8 +20,9 @@
                 <i class="bi bi-gift mr-2"></i> Offers
             </a>
             <a href="#" class="text-gray-800 flex items-center w-full md:w-auto">
-                <i class="bi bi-question-circle mr-2"></i> Help
+                <i class="bi bi-question-octagon"></i> Help
             </a>
+
            
             <a *ngIf="isLoggedIn" (click)="onLogout()" class="w-full md:w-auto">
                 <i class="bi bi-person mr-1"></i> {{userName}} 
@@ -33,6 +34,10 @@
             <!-- Before Login - Sign In Button -->
             <a *ngIf="!isLoggedIn " routerLink="signin" href="signin" class="text-gray-800 flex items-center w-full md:w-auto">
                 <i class="bi bi-person mr-2"></i> Sign In
+            </a>
+
+            <a  routerLink="favourites" href="favourites" class="text-gray-800 flex items-center w-full md:w-auto ">
+                <i class="bi bi-heart mr-2"></i> Favourites
             </a>
               
             <a *ngIf="!inCartView " routerLink="checkout" href="checkout" class="text-gray-800 flex items-center w-full md:w-auto">

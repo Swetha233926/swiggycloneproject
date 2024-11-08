@@ -1,0 +1,47 @@
+<div class="p-4">
+    <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Your Favorites</h2>
+  
+    <!-- Favorites list grid layout -->
+    <div *ngIf="favourites.length > 0; else noFavourites" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      <div *ngFor="let item of favourites" class="p-4 border rounded-lg shadow-md relative">
+        <img [src]="item.image" [alt]="item.name" class="w-full h-32 object-cover rounded-md mb-4">
+  
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold text-lg">{{ item.name }}</h3>
+          <button
+            (click)="toggleFavourite(item)"
+            class="text-xl"
+            [ngClass]="isFavorite(item) ? 'text-red-600' : 'text-gray-400'"
+            title="Toggle favourite"
+          >
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+  
+        <p class="text-blue-600 font-semibold">{{ item.price }}</p>
+        <p class="text-gray-500 text-sm">{{ item.restaurant }} - {{ item.location }}</p>
+      </div>
+    </div>
+  
+    <!-- No Favorites message -->
+    <ng-template #noFavourites>
+      <div class="flex flex-col items-center text-center py-12">
+        <!-- Icon -->
+        <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+  
+        <!-- Message -->
+        <p class="text-lg font-semibold text-gray-700 mb-2">No items in your favorites</p>
+        <p class="text-gray-500 mb-4">Browse our menu and add items to your favorites!</p>
+  
+        <!-- Call-to-action button -->
+         <a href="offers">
+        <button class="px-6 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition">
+          Browse Menu
+        </button>
+        </a>
+      </div>
+    </ng-template>
+  </div>
+  

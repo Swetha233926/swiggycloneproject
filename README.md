@@ -2,6 +2,11 @@
 
 https://www.swiggy.com/
 
+# Hosted Web Url
+Hosted with the help of firebase
+
+https://swiggy-fc93f.web.app/
+
 # SwiggyProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
